@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html,body {
+html,
+body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -22,7 +23,6 @@ body {
   0% {
     background-position: 50% 0%;
   }
-
   100% {
     background-position: 50% 100%;
   }
@@ -33,10 +33,9 @@ header {
   height: auto;
   max-height: 100%;
   border: 3px solid black;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(8, 4, 26);
   box-shadow: 5px 5px 8px black;
   padding: 1rem;
-  
 }
 
 header h1 {
@@ -44,7 +43,6 @@ header h1 {
   text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
 }
 nav {
-  
   z-index: 3;
 
   display: flex;
@@ -97,7 +95,6 @@ main {
   0% {
     background-position: 50% 0%;
   }
-
   100% {
     background-position: 50% 100%;
   }
@@ -110,20 +107,19 @@ main {
 .monster {
   height: 20%;
   width: 20%;
-  
   background-image: url(../img/zombie.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   animation: shake 2s ease-in-out infinite;
 }
+
 @keyframes shake {
   0%,
   100% {
     transform: rotate(0deg);
     transform-origin: 50% 50%;
   }
-
   20%,
   60% {
     transform: rotate(10deg);
@@ -138,7 +134,6 @@ main {
   font-size: 3rem;
   text-align: center;
   position: relative;
-  
 }
 
 .gun {
@@ -181,59 +176,11 @@ main {
   box-shadow: 5px 5px 8px white;
   position: absolute;
   bottom: 0;
-  left: 50%; /* Centrato orizzontalmente */
+  left: 50%;
   transform: translateY(0);
   transition: transform 1s ease-out;
-  opacity: 0; /* Invisibile fino all'attivazione */
+  opacity: 0;
   z-index: 0;
-  /* transition: background-color 0.1s ease-in-out; */
-}
-
-@keyframes background-color {
-  0% {
-  }
-
-  50% {
-  }
-
-  100% {
-  }
-}
-
-@media (min-width: 700px) {
-  body {
-    display: flex;
-  }
-  header {
-    width: 30%;
-    height: 100vh;
-  }
-  nav{
-    min-height: 5vh;
-  }
-  .startgamebutton {
-    margin: 2rem 0;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  #insmobile{
-    display: none;
-  }
-  #basic-stuff {
-    display: block;
-}
-  .monster{
-    margin-top: 3rem;
-  }
-  .count{
-    top: -2.5rem;
-  }
-  main {
-    height: 100%;
-  }
-  .gun{
-    height:200px;
-  }
 }
 
 .messageConsole {
@@ -251,59 +198,82 @@ main {
   font-size: 3rem;
 }
 
-/* Classe per il blur */
+@media (min-width: 700px) {
+  body {
+    display: flex;
+  }
+  header {
+    width: 30%;
+    height: 100vh;
+  }
+  nav {
+    min-height: 5vh;
+  }
+  .startgamebutton {
+    margin: 2rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  #insmobile {
+    display: none;
+  }
+  #basic-stuff {
+    display: block;
+  }
+  .monster {
+    margin-top: 3rem;
+  }
+  .count {
+    top: -2.5rem;
+  }
+  main {
+    height: 100%;
+  }
+  .gun {
+    height: 200px;
+  }
+}
+
 .blur {
-  filter: blur(5px); /* Applica l'effetto sfocato */
-  pointer-events: none; /* Disabilita interazioni durante il blur */
+  filter: blur(5px);
+  pointer-events: none;
 }
 
-
-
-    
-    
-    @media (max-width: 700px) {
-      header {
-        width: 100%;
-        min-height: 7%;
-        z-index: 3;
-      }
-    header h1{
-        display: none;
-    }
-      nav {
-        flex-wrap: wrap; /* Consenti la disposizione su più righe */
-        gap: 10px; /* Aggiungi spazio tra i bottoni */
-      }
-      .startgamebutton{
-        padding: 0.5rem;
-
-      }
-    #basic-stuff {
-      position: fixed; /* O absolute se vuoi che sia relativo al parent */
-      top: 7%; /* Posizionamento in alto */
-      left: 0; /* Allineamento a sinistra */
-      width: 100%; /* Larghezza completa */
-      height: auto; /* Altezza dinamica in base al contenuto */
-      background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
-      color: white;
-      padding: 1rem;
-      z-index: 1000; /* Assicurati che stia sopra agli altri elementi */
-      display: none; /* Nascosto di default */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-    
-    .monster {
-      margin-top: 2rem;
-      min-height: 15%;
-    }
-      
-      /* Transizione per apertura/chiusura */
-
+@media (max-width: 700px) {
+  header {
+    width: 100%;
+    min-height: 7%;
+    z-index: 3;
+  }
+  header h1 {
+    display: none;
+  }
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .startgamebutton {
+    padding: 0.5rem;
+  }
+  #basic-stuff {
+    position: fixed;
+    top: 7%;
+    left: 0; 
+    width: 100%;
+    height: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white;
+    padding: 1rem;
+    z-index: 5; 
+    display: none; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  .monster {
+    margin-top: 2rem;
+    min-height: 15%;
+  }
 }
 
-      
-      
-    
 .activemes {
   display: block;
 }
