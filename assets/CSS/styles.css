@@ -10,7 +10,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   touch-action: none;
-  
+  -webkit-touch-callout: none;
 }
 
 button{
