@@ -240,6 +240,7 @@ main {
 }
 
 @media (max-width: 700px) {
+  
   header {
     width: 100%;
     min-height: 7%;
@@ -257,7 +258,6 @@ main {
   }
   #basic-stuff {
     position: fixed;
-    top: 7%;
     left: 0; 
     width: 100%;
     height: auto; 
@@ -267,6 +267,9 @@ main {
     z-index: 5; 
     display: none; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  main {
+    height: 80vh;
   }
   .monster {
     margin-top: 2rem;

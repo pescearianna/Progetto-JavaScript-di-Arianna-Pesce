@@ -16,7 +16,9 @@ const basicStuff = document.querySelector('#basic-stuff');
 const buttonMobile = document.querySelector('#insmobile');
 
 
-
+document.addEventListener('dblclick', function(event) {
+          event.preventDefault();
+        }); 
 
    buttonMobile.onclick = () => {
            if (basicStuff.style.display === 'none') {
@@ -25,7 +27,8 @@ const buttonMobile = document.querySelector('#insmobile');
              basicStuff.style.display = 'none';
            }
          }
-       
+
+             
 
 
 
@@ -92,7 +95,7 @@ function match() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    buttonMobile.innerHTML = "YOU LOST";
+    buttonMobile.innerHTML = "YOU WON!";
     finalMessage.innerHTML = "YOU WON! Congrats to our superhero. &#127881;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
