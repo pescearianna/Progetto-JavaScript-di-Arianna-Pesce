@@ -45,7 +45,7 @@ function addLife() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    buttonMobile.innerHTML = "YOU LOST"
+    buttonMobile.innerHTML = "YOU LOST!";
     finalMessage.innerHTML = "YOU LOST! The Alien now is too strong. They are coming for you.&#128126;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
@@ -77,6 +77,7 @@ resetGame.onclick = () => {
   rocketUn.innerHTML = ammo;
   shootOne.disabled = false;
   recharge.disabled = false;
+  buttonMobile.innerHTML = "INSTRUCTIONS";
   if (mesCons.classList.contains("activemes")) {
     mesCons.classList.remove("activemes");
     instr.classList.add("activemes");
