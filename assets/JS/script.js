@@ -25,7 +25,9 @@ const buttonMobile = document.querySelector('#insmobile');
            }
          }
 
-             
+  document.ondblclick= (event)=>{
+    event.preventDefault();
+  }           
 
 
 
