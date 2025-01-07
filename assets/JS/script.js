@@ -12,8 +12,23 @@ let rocket = 10;
 const rocketUn = document.querySelector("#rocket");
 const recharge = document.querySelector("#recharge");
 let finalMessage = document.querySelector("#finalmessage");
+const basicStuff = document.querySelector('#basic-stuff');
+const buttonMobile = document.querySelector('#insmobile');
 
-//   lifeMonster.innerHTML = lifePoints;
+
+
+
+   buttonMobile.onclick = () => {
+           if (basicStuff.style.display === 'none') {
+             basicStuff.style.display = 'block';        
+           } else {
+             basicStuff.style.display = 'none';
+           }
+         }
+       
+
+
+
 
 let addingLife; // Variabile per salvare l'ID dell'intervallo
 
@@ -28,7 +43,8 @@ function addLife() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    finalMessage.innerHTML = "YOU LOSE! The Alien now is too strong. They are coming for you.&#128126;";
+    buttonMobile.innerHTML = "YOU LOST"
+    finalMessage.innerHTML = "YOU LOST! The Alien now is too strong. They are coming for you.&#128126;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
     clearInterval(addingLife);
@@ -46,8 +62,6 @@ newGame.onclick = () => {
   if (addingLife) {
     clearInterval(addingLife);
   }
-  
-  // Crea un nuovo intervallo e salvalo in `addingLife`
   addingLife = setInterval(addLife, 5000);
   recharge.disabled = true;
   recharge.style.opacity = "0.2";
@@ -57,6 +71,8 @@ newGame.onclick = () => {
 resetGame.onclick = () => {
   lifePoints = 20;
   lifeMonster.innerHTML = lifePoints;
+  ammo = 10;
+  rocketUn.innerHTML = ammo;
   shootOne.disabled = false;
   recharge.disabled = false;
   if (mesCons.classList.contains("activemes")) {
@@ -76,8 +92,8 @@ function match() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    const youWin = "YOU WON! Congrats to our superhero. &#127881;";
-    finalMessage.innerHTML = youWin;
+    buttonMobile.innerHTML = "YOU LOST";
+    finalMessage.innerHTML = "YOU WON! Congrats to our superhero. &#127881;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
     clearInterval(addingLife);
@@ -85,9 +101,10 @@ function match() {
   
 }
 
+
+
 shootOne.onclick = () => {
   let ammo = parseInt(rocketUn.textContent, 10);
-
   if (ammo > 0) {
     ammo -= 1; // Diminuisce di 1
     rocketUn.textContent = ammo;
@@ -115,8 +132,7 @@ shootOne.onclick = () => {
     // Aggiungi la classe per animare
     theActiveLaser.classList.add("active");
     theActiveLaser.style.opacity = "1";
-    theActiveLaser.style.transform = "translateY(-100vh)";
-
+    theActiveLaser.style.transform = "translateY(-120vh)";
     // Ripristina la posizione iniziale dopo 1 secondi
     setTimeout(() => {
       theActiveLaser.classList.remove("active");
@@ -124,12 +140,10 @@ shootOne.onclick = () => {
       theActiveLaser.style.opacity = "0";
     }, 1000); // Durata della transizione
   }
-
   if (lifePoints > 0) {
     lifePoints--;
     lifeMonster.innerHTML = lifePoints;
   }
-
   match();
 };
 

@@ -1,298 +1,309 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    height: 100vh;
-}
-
-.counter{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-}
-
-button {
-    min-width: 5rem;
-    min-height: 5rem;
-    font-size: 5rem;
-    padding: 2rem;
-}
-
-.count{
-    padding: 2rem 5rem;
-    font-size: 5rem;
-}
-
-.reset{
-    display: block;
-    margin: auto;
-}
-
-#laser {
-    width: 100px;
-    height: 50px;
-    background-color: red;
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 50px); /* Centrato orizzontalmente
-    transform: translateY(0);
-  }
-
-  .moving {
-    animation: moveUp 2s linear forwards;
-  }
-
-  @keyframes moveUp {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-100vh);
-    }
-  }
-   */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
-body {
-    height: 100vh;
-    width: 100%;
-    font-family: "Orbitron", serif;
-    background-image: url(../img/space.jpg); 
-    background-size: cover;
-    
-    animation: backmove 30s ease-in-out infinite;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Orbitron", serif;
+  background-image: url(../img/space.jpg);
+  background-size: cover;
+  animation: backmove 30s ease-in-out infinite;
 }
 @keyframes backmove {
-	0% {
-		background-position: 50% 0%;
-	}
+  0% {
+    background-position: 50% 0%;
+  }
 
-	100% {
-		background-position: 50% 100%;
-	}
+  100% {
+    background-position: 50% 100%;
+  }
 }
 
 header {
-    border: 3px solid black;
-        background-color: rgb(32, 32, 32);
-        box-shadow: 5px 5px 8px black;
-        padding: 1rem;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  border: 3px solid black;
+  background-color: rgb(32, 32, 32);
+  box-shadow: 5px 5px 8px black;
+  padding: 1rem;
+  
 }
 
-header h1{
-    color: rgb(78, 221, 2);
-    text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
+header h1 {
+  color: rgb(78, 221, 2);
+  text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
 }
-nav{
-    min-height: 5vh;
-    z-index: 3;
+nav {
+  
+  z-index: 3;
 
-    display: flex;
-    text-align: center;
-    justify-content: space-evenly;
-}
-
-button{
-    font-family: "Press Start 2P", serif;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
 }
 
-.startgamebutton{
-    background-color: rgb(255, 255, 30);
-    border: 1px solid white;
-    box-shadow: 5px 5px 8px yellow;
-    border-radius: 20px;
-        color: black;
-        font-family: "Press Start 2P", serif;
+button {
+  font-family: "Press Start 2P", serif;
 }
 
-header h1{
-    text-align: center;
-    padding: 1rem 0.5rem;
-    font-family: "Press Start 2P", serif;
+.startgamebutton {
+  background-color: rgb(255, 255, 30);
+  border: 1px solid white;
+  box-shadow: 5px 5px 8px yellow;
+  border-radius: 20px;
+  color: black;
+  font-family: "Press Start 2P", serif;
 }
 
-#basic-stuff{
-    border: 3px dotted rgb(89, 255, 0);
-    min-height: 40%;
-    background-color: black;
-    color: rgb(89, 255, 0);
-    padding: 1rem;
+header h1 {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-family: "Press Start 2P", serif;
+}
+
+#basic-stuff {
+  border: 3px dotted rgb(89, 255, 0);
+  min-height: 40%;
+  background-color: black;
+  color: rgb(89, 255, 0);
+  padding: 1rem;
 }
 
 main {
-    margin: 0;
-    padding: 0;
-    height: 90vh; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /* position: relative; */
-    overflow: hidden;
-    color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
+  margin: 0;
+  padding: 0;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
+}
+
+@keyframes backmove {
+  0% {
+    background-position: 50% 0%;
   }
 
-  @keyframes backmove {
-	0% {
-		background-position: 50% 0%;
-	}
-
-	100% {
-		background-position: 50% 100%;
-	}
+  100% {
+    background-position: 50% 100%;
+  }
 }
 
 .instructions {
-    font-size: 1rem;
-     
+  font-size: 1rem;
 }
 
-
-
-
-  .monster{
-    height: 20%;
-    width: 20%;
-    margin-top: 3rem;
-    background-image: url(../img/zombie.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    animation: shake 2s ease-in-out infinite;
+.monster {
+  height: 20%;
+  width: 20%;
+  
+  background-image: url(../img/zombie.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: shake 2s ease-in-out infinite;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
   }
-  @keyframes shake {
-	0%,
-	100% {
-		transform: rotate(0deg);
-		transform-origin: 50% 50%;
-	}
 
-	20%,
-    60% {
-		transform: rotate(10deg);
-	}
-	40%,
-	80% {
-		transform: rotate(-10deg);
-	}}
-
+  20%,
+  60% {
+    transform: rotate(10deg);
+  }
+  40%,
+  80% {
+    transform: rotate(-10deg);
+  }
+}
 
 .count {
-    font-size: 3rem;
-    text-align: center;
-    position: relative;
-    top: -2.5rem;
+  font-size: 3rem;
+  text-align: center;
+  position: relative;
+  
 }
-
 
 .gun {
-    height: 200px;
-    width: 300px;
-    background-image: url(../img/spaceship.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center; 
-    align-items:flex-end;
-    padding-bottom: 1rem;
+  height: 150px;
+  width: 300px;
+  background-image: url(../img/spaceship.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
 }
 
-  .gamebutton {
-    height: 3rem;
-    padding: 1rem;
-    border-radius: 20px;
-    background-color: rgba(128, 128, 128, 0.8);
-    color: white;
-    z-index: 3;
+.gamebutton {
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128, 0.8);
+  color: white;
+  z-index: 3;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.laser {
+  width: 10px;
+  height: 50px;
+  border-radius: 20px;
+  background: linear-gradient(
+    354deg,
+    rgba(0, 255, 248, 1) 33%,
+    rgba(255, 40, 236, 1) 81%
+  );
+  box-shadow: 5px 5px 8px white;
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Centrato orizzontalmente */
+  transform: translateY(0);
+  transition: transform 1s ease-out;
+  opacity: 0; /* Invisibile fino all'attivazione */
+  z-index: 0;
+  /* transition: background-color 0.1s ease-in-out; */
+}
+
+@keyframes background-color {
+  0% {
   }
 
-  #container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  50% {
   }
 
-  .laser {
-    width: 10px;
-    height: 50px;
-    border-radius: 20px;
-    background: linear-gradient(354deg, rgba(0,255,248,1) 33%, rgba(255,40,236,1) 81%); 
-    box-shadow: 5px 10px 8px yellow;
-    position: absolute;
-    bottom: 0;
-    left: 50%; /* Centrato orizzontalmente */
-    transform: translateY(0);
-    transition: transform 1s ease-out;
-    opacity: 0; /* Invisibile fino all'attivazione */
-    z-index: 0;
-    /* transition: background-color 0.1s ease-in-out; */
+  100% {
   }
-
-    @keyframes background-color {
-        0%{}
-
-        50%{}
-
-        100%{}
-    }
+}
 
 @media (min-width: 700px) {
-    body{
-        display: flex;
-        
-    }
-    header{
-        width: 30%;
-        height: 100vh;
-        
-       
-    }
-    .startgamebutton{
-        margin: 2rem 0;
-        padding: 1rem;
-        font-size: 1rem;
-        
-    }
-    main{
-        height: 100%;
-    }
-}
-
-
-
-.messageConsole{
+  body {
+    display: flex;
+  }
+  header {
+    width: 30%;
+    height: 100vh;
+  }
+  nav{
+    min-height: 5vh;
+  }
+  .startgamebutton {
+    margin: 2rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  #insmobile{
     display: none;
-}
-.instructions{
-    display: none;
-}
-
-
-.activemes{
+  }
+  #basic-stuff {
     display: block;
 }
+  .monster{
+    margin-top: 3rem;
+  }
+  .count{
+    top: -2.5rem;
+  }
+  main {
+    height: 100%;
+  }
+  .gun{
+    height:200px;
+  }
+}
 
-#rocket{
-    font-size: 3rem;
+.messageConsole {
+  display: none;
+}
+.instructions {
+  display: none;
+}
+
+.activemes {
+  display: block;
+}
+
+#rocket {
+  font-size: 3rem;
 }
 
 /* Classe per il blur */
 .blur {
-    filter: blur(5px); /* Applica l'effetto sfocato */
-    pointer-events: none; /* Disabilita interazioni durante il blur */
-  }
-  
+  filter: blur(5px); /* Applica l'effetto sfocato */
+  pointer-events: none; /* Disabilita interazioni durante il blur */
+}
+
+
+
+    
+    
+    @media (max-width: 700px) {
+      header {
+        width: 100%;
+        min-height: 7%;
+        z-index: 3;
+      }
+    header h1{
+        display: none;
+    }
+      nav {
+        flex-wrap: wrap; /* Consenti la disposizione su più righe */
+        gap: 10px; /* Aggiungi spazio tra i bottoni */
+      }
+      .startgamebutton{
+        padding: 0.5rem;
+
+      }
+    #basic-stuff {
+      position: fixed; /* O absolute se vuoi che sia relativo al parent */
+      top: 7%; /* Posizionamento in alto */
+      left: 0; /* Allineamento a sinistra */
+      width: 100%; /* Larghezza completa */
+      height: auto; /* Altezza dinamica in base al contenuto */
+      background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
+      color: white;
+      padding: 1rem;
+      z-index: 1000; /* Assicurati che stia sopra agli altri elementi */
+      display: none; /* Nascosto di default */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .monster {
+      margin-top: 2rem;
+      min-height: 15%;
+    }
+      
+      /* Transizione per apertura/chiusura */
+
+}
+
+      
+      
+    
+.activemes {
+  display: block;
+}
