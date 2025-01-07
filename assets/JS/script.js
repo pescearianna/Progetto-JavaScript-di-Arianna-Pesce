@@ -16,9 +16,6 @@ const basicStuff = document.querySelector('#basic-stuff');
 const buttonMobile = document.querySelector('#insmobile');
 
 
-document.addEventListener('dblclick', function(event) {
-          event.preventDefault();
-        }); 
 
    buttonMobile.onclick = () => {
            if (basicStuff.style.display === 'none') {
