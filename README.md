@@ -9,7 +9,7 @@
 
 <div align='center'>
 <a href="https://pescearianna.github.io/Progetto-JavaScript-di-Arianna-Pesce/">
-  <img src="./assets/img/playgame.png" alt="play game" style='margin: 10px auto 30px; width:200px'>
+  <img src="./assets/img/playgame.jpg" alt="play game" style='margin: 10px auto 30px; width:200px'>
   </a>
 </div>
 
