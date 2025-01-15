@@ -4,11 +4,17 @@
         <p>Embark on a space mission and try to win the alien with your lasers shoots.<p>
 </div>
 
+<br>
+<br>
+
 <div align='center'>
 <a href="https://pescearianna.github.io/Progetto-JavaScript-di-Arianna-Pesce/">
   <img src="./assets/img/playgame.png" alt="play game" style='margin: 10px auto 30px; width:200px'>
   </a>
 </div>
+
+<br>
+<br>
 
 <div align='center'>
 <p>
@@ -22,6 +28,8 @@
 
 ![screenshot](./assets/img/pc-display.JPG)
 
+<br>
+<br>
 
 # The Laser Space Game
 
