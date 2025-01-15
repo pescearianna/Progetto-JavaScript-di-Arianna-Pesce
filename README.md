@@ -4,13 +4,13 @@
         <p>Embark on a space mission and try to win the alien with your lasers shoots.<p>
 </div>
 
-<div style='display: flex; justify-content:center; align-items:center'>
+<div align='center'>
 <a href="https://pescearianna.github.io/Progetto-JavaScript-di-Arianna-Pesce/">
   <img src="./assets/img/playgame.png" alt="play game" style='margin: 10px auto 30px; width:200px'>
   </a>
 </div>
 
-<div style='display: flex; justify-content:center; align-items:center'>
+<div align='center'>
 <p>
   <a href="#description">Description</a> •
   <a href="#how-to-play">How To Play</a> •
