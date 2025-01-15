@@ -8,7 +8,7 @@ const instrbtn = document.createElement("button");
 const recharge = document.createElement("button");
 const shootOne = document.createElement("button");
 
-const console = document.querySelector('.yourconsole');
+const userConsole = document.querySelector('.yourconsole');
 const gun = document.querySelector('.gun')
 const lifeMonster = document.getElementById("life");
 const mesCons = document.querySelector(".messageConsole");
@@ -21,7 +21,7 @@ let addingLife;
 //RELOAD BUTTON
 recharge.textContent = "RELOAD";         
 recharge.className = "gamebutton"; 
-console.appendChild(recharge);
+userConsole.appendChild(recharge);
 //SHOOT BUTTON
 shootOne.textContent = "SHOOT";         
 shootOne.className = "gamebutton"; 
@@ -38,24 +38,21 @@ navMenu.appendChild(resetbtn);
 function addMobileButton() {
   if (window.innerWidth <= 992) {
     if (!document.getElementById("insMobile")) {
-    // const instrbtn = document.createElement("button");
-    // instrbtn.id = "insMobile";
     instrbtn.textContent = "Instructions";
     instrbtn.className = 'startgamebutton';
 
     instrbtn.onclick = () => {
       const basicStuff = document.querySelector('#basic-stuff');
-        if (basicStuff.style.display === 'none') {
-          basicStuff.style.display = 'block';        
+        if (basicStuff.style.display === 'block') {
+          basicStuff.style.display = 'none';        
         } else {
-          basicStuff.style.display = 'none';
+          basicStuff.style.display = 'block';
         }
     };
     navMenu.appendChild(instrbtn);
     }
   } 
   else {
-    const instrbtn = document.getElementById("insMobile");
     if (instrbtn) {
       instrbtn.remove();
     }
@@ -83,7 +80,7 @@ function addLife() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    instrbtn.innerHTML = "YOU LOST!";
+    instrbtn.textContent = "YOU LOST!";
     finalMessage.innerHTML = "YOU LOST! The Alien now is too strong. They are coming for you.&#128126;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
@@ -106,17 +103,22 @@ startbtn.onclick = () => {
   recharge.disabled = true;
   recharge.style.opacity = "0.2";
   shootOne.style.opacity = "1";
+  if (window.innerWidth <= 992) {
+      const basicStuff = document.querySelector('#basic-stuff');
+        if (basicStuff.style.display === 'block') {
+          basicStuff.style.display = 'none';        
+        } 
+    }
 }
 
 resetbtn.onclick = () => {
-  console.log("entro");
   lifePoints = 20;
   lifeMonster.innerHTML = lifePoints;
   ammo = 10;
   rocketUn.innerHTML = ammo;
   shootOne.disabled = false;
   recharge.disabled = false;
-  instrbtn.innerHTML = "INSTRUCTIONS";
+  instrbtn.textContent = "INSTRUCTIONS";
   if (mesCons.classList.contains("activemes")) {
     mesCons.classList.remove("activemes");
     instr.classList.add("activemes");
@@ -134,7 +136,7 @@ function match() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    instrbtn.innerHTML = "YOU WON!";
+    instrbtn.textContent = "YOU WON!";
     finalMessage.innerHTML = "YOU WON! Congrats to our superhero. &#127881;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");

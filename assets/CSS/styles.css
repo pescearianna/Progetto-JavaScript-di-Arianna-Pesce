@@ -48,6 +48,7 @@ header {
 header h1 {
   color: rgb(78, 221, 2);
   text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
+  margin: 0.5rem;
 }
 nav {
   z-index: 3;
@@ -63,8 +64,7 @@ button {
 
 .startgamebutton {
   background-color: rgb(255, 255, 30);
-  border: 1px solid white;
-  box-shadow: 5px 5px 8px yellow;
+  border: 1px solid #a1a1a1;
   border-radius: 20px;
   color: black;
   font-family: "Press Start 2P", serif;
@@ -73,13 +73,12 @@ button {
 
 header h1 {
   text-align: center;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0;
   font-family: "Press Start 2P", serif;
 }
 
 #basic-stuff {
   border: 3px dotted rgb(89, 255, 0);
-  min-height: 40%;
   background-color: black;
   color: rgb(89, 255, 0);
   padding: 1rem;
@@ -226,6 +225,8 @@ main {
   
   #basic-stuff {
     display: block;
+    margin: 1.5rem 0;
+    min-height: 40%;
   }
   .monster {
     margin-top: 3rem;
@@ -267,15 +268,15 @@ main {
   }
   #basic-stuff {
     position: fixed;
-    left: 0; 
-    width: 100%;
-    height: auto; 
+    width: 90%;
+    margin: 1.5rem auto;
     background-color: rgba(0, 0, 0, 0.8); 
     color: white;
     padding: 1rem;
     z-index: 5; 
     display: none; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    min-height:30%;
   }
   main {
     height: 80vh;
