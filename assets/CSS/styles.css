@@ -68,6 +68,7 @@ button {
   border-radius: 20px;
   color: black;
   font-family: "Press Start 2P", serif;
+  cursor: pointer;
 }
 
 header h1 {
@@ -220,10 +221,9 @@ main {
     margin: 2rem 0;
     padding: 1rem;
     font-size: 1rem;
+    margin: 0.8rem;
   }
-  #insmobile {
-    display: none;
-  }
+  
   #basic-stuff {
     display: block;
   }

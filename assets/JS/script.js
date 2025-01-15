@@ -1,43 +1,81 @@
-const laserShoot = Array.from(document.querySelectorAll(".laser"));
-const shootOne = document.getElementById("shoot");
-const lifeMonster = document.getElementById("life");
+const MAX_LIFE = 50;
 let lifePoints = 20;
-const maxLife = 50;
-const newGame = document.getElementById("newgame");
-const resetGame = document.getElementById("resetgame");
+let rocket = 10;
+const navMenu = document.querySelector('nav');
+const startbtn = document.createElement("button");
+const resetbtn = document.createElement("button");
+const instrbtn = document.createElement("button");
+const recharge = document.createElement("button");
+const shootOne = document.createElement("button");
+
+const console = document.querySelector('.yourconsole');
+const gun = document.querySelector('.gun')
+const lifeMonster = document.getElementById("life");
 const mesCons = document.querySelector(".messageConsole");
 const instr = document.querySelector(".instructions");
 const blurEffect = document.querySelector(".blur");
-let rocket = 10;
 const rocketUn = document.querySelector("#rocket");
-const recharge = document.querySelector("#recharge");
 let finalMessage = document.querySelector("#finalmessage");
-const basicStuff = document.querySelector('#basic-stuff');
-const buttonMobile = document.querySelector('#insmobile');
+let addingLife;
 
+//RELOAD BUTTON
+recharge.textContent = "RELOAD";         
+recharge.className = "gamebutton"; 
+console.appendChild(recharge);
+//SHOOT BUTTON
+shootOne.textContent = "SHOOT";         
+shootOne.className = "gamebutton"; 
+gun.appendChild(shootOne);
+//START BUTTON
+startbtn.textContent = "Start";      
+startbtn.className = "startgamebutton"; 
+navMenu.appendChild(startbtn);
+//RESET BUTTON
+resetbtn.textContent = "Reset";      
+resetbtn.className = "startgamebutton"; 
+navMenu.appendChild(resetbtn); 
+//instruction mobile mobile version
+function addMobileButton() {
+  if (window.innerWidth <= 992) {
+    if (!document.getElementById("insMobile")) {
+    // const instrbtn = document.createElement("button");
+    // instrbtn.id = "insMobile";
+    instrbtn.textContent = "Instructions";
+    instrbtn.className = 'startgamebutton';
 
+    instrbtn.onclick = () => {
+      const basicStuff = document.querySelector('#basic-stuff');
+        if (basicStuff.style.display === 'none') {
+          basicStuff.style.display = 'block';        
+        } else {
+          basicStuff.style.display = 'none';
+        }
+    };
+    navMenu.appendChild(instrbtn);
+    }
+  } 
+  else {
+    const instrbtn = document.getElementById("insMobile");
+    if (instrbtn) {
+      instrbtn.remove();
+    }
+  }
+}
+    
+  window.addEventListener("resize", addMobileButton);
+  addMobileButton()
+  
+//avoid default zoomin doubleclick in mobile version
+document.ondblclick= (event)=>{
+  event.preventDefault();
+}           
 
-   buttonMobile.onclick = () => {
-           if (basicStuff.style.display === 'none') {
-             basicStuff.style.display = 'block';        
-           } else {
-             basicStuff.style.display = 'none';
-           }
-         }
-
-  document.ondblclick= (event)=>{
-    event.preventDefault();
-  }           
-
-
-
-
-let addingLife; // Variabile per salvare l'ID dell'intervallo
+//GAME FUNCTIONS
 
 function addLife() {
-  if (lifePoints < maxLife) {
+  if (lifePoints < MAX_LIFE) {
     lifePoints += 10;
-    lifePoints = Math.min(lifePoints, maxLife);
+    lifePoints = Math.min(lifePoints, MAX_LIFE);
     lifeMonster.innerHTML = lifePoints;
   }
   if (lifePoints === 50) {
@@ -45,7 +83,7 @@ function addLife() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    buttonMobile.innerHTML = "YOU LOST!";
+    instrbtn.innerHTML = "YOU LOST!";
     finalMessage.innerHTML = "YOU LOST! The Alien now is too strong. They are coming for you.&#128126;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
@@ -53,7 +91,7 @@ function addLife() {
   }
 }
 
-newGame.onclick = () => {
+startbtn.onclick = () => {
   if (instr.classList.contains("activemes")) {
     instr.classList.remove("activemes");
     mesCons.classList.add("activemes");
@@ -68,16 +106,17 @@ newGame.onclick = () => {
   recharge.disabled = true;
   recharge.style.opacity = "0.2";
   shootOne.style.opacity = "1";
-};
+}
 
-resetGame.onclick = () => {
+resetbtn.onclick = () => {
+  console.log("entro");
   lifePoints = 20;
   lifeMonster.innerHTML = lifePoints;
   ammo = 10;
   rocketUn.innerHTML = ammo;
   shootOne.disabled = false;
   recharge.disabled = false;
-  buttonMobile.innerHTML = "INSTRUCTIONS";
+  instrbtn.innerHTML = "INSTRUCTIONS";
   if (mesCons.classList.contains("activemes")) {
     mesCons.classList.remove("activemes");
     instr.classList.add("activemes");
@@ -95,16 +134,13 @@ function match() {
     shootOne.style.opacity = "0.2";
     recharge.disabled = true;
     recharge.style.opacity = "0.2";
-    buttonMobile.innerHTML = "YOU WON!";
+    instrbtn.innerHTML = "YOU WON!";
     finalMessage.innerHTML = "YOU WON! Congrats to our superhero. &#127881;";
     finalMessage.style.fontSize = "2.5rem"
     blurEffect.classList.add("blur");
     clearInterval(addingLife);
   }
-  
 }
-
-
 
 shootOne.onclick = () => {
   let ammo = parseInt(rocketUn.textContent, 10);
@@ -113,7 +149,6 @@ shootOne.onclick = () => {
     rocketUn.textContent = ammo;
     finalMessage.innerHTML = "Go ahead! You are a superhero!"
   }
-
   if (ammo === 0) {
     shootOne.disabled = true;
     shootOne.style.opacity = "0.2"; // Disabilita il bottone "Shoot"
@@ -121,7 +156,7 @@ shootOne.onclick = () => {
     recharge.style.opacity = "1";
     finalMessage.innerHTML = "Remember to recharge your weapon!" // Abilita il bottone "Recharge"
   }
-
+  const laserShoot = Array.from(document.querySelectorAll(".laser"));
   // Trova i div .laser  che non abbiano la classe active e immagazzinali nella variabile nextLaserShoot,
   // restituisci un solo div .laser casuale che sarà il prossimo ad avere l'animazione
   const nextLaserShoot = laserShoot.filter(
@@ -131,7 +166,6 @@ shootOne.onclick = () => {
   if (nextLaserShoot.length > 0) {
     const randomIndex = Math.floor(Math.random() * nextLaserShoot.length);
     const theActiveLaser = nextLaserShoot[randomIndex];
-
     // Aggiungi la classe per animare
     theActiveLaser.classList.add("active");
     theActiveLaser.style.opacity = "1";
