@@ -1,4 +1,4 @@
-<div style='display: flex; flex-direction:column; justify-content:center; align-items:center'>
+<div align='center'>
     <img src="./assets/img/zombie.png" alt="The Laser Space Game" style='margin: 20px auto; width:200px'>
         <h1>The Laser Space Game | A Javascript project</h1>   
         <p>Embark on a space mission and try to win the alien with your lasers shoots.<p>
